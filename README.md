@@ -1,60 +1,29 @@
-# GitHub Community Demo
+# Financial Trend Prediction Model
 
-This project is a simple Python example that creates fake stock data and uses a machine learning model to guess whether the next day’s price will go up or down.
+This project implements a lightweight machine learning pipeline designed to predict daily asset price direction movements using historical technical indicators and a Random Forest classifier.
 
-## What this project does
+## Overview
 
-The script in [New folder/Githubcommunity.py](New%20folder/Githubcommunity.py) does a few basic things:
+The script generates synthetic price movement data using geometric Brownian motion, computes standard market technical indicators, and trains a supervised classification model to predict whether the next day's closing price will be higher than the current day. To prevent data leakage and look-ahead bias, it utilizes a time-series train-test split without shuffling.
 
-- creates fake stock data for 1,000 business days
-- builds features like price change, moving averages, and volatility
-- sets a target value for whether the next close is higher or lower
-- splits the data into training and testing sets
-- trains a Random Forest model
-- checks how accurate the model is
-- shows the results in the terminal and in a chart
+## Features Engineered
 
-## Why this project exists
-
-This is mostly a learning project for:
-
-- working with time-series data
-- making simple prediction models
-- using scikit-learn
-- checking model performance
-- visualizing results
+* **Return**: Daily percentage change in closing prices.
+* **Ratio**: Ratio of the 5-day simple moving average to the 20-day simple moving average.
+* **Volatility**: Rolling 10-day standard deviation of returns.
+* **Target**: Binary indicator representing whether the following day's closing price exceeds the current close.
 
 ## Requirements
 
-You need Python and these packages:
+* Python 3.8+
+* pandas == 2.2.1[cite: 1]
+* numpy == 1.26.4[cite: 1]
+* scikit-learn == 1.4.1.post1[cite: 1]
+* matplotlib == 3.8.3[cite: 1]
 
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
+## Setup & Running
 
-Install them with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to run it
-
-From the project folder, run:
-
-```bash
-python "New folder/Githubcommunity.py"
-```
-
-The script will print the model accuracy and show a graph comparing the actual and predicted price direction.
-
-## Notes
-
-- The data is synthetic, so it is only for demonstration.
-- The model is a basic example and not a real trading system.
-- It is useful for learning, not for live financial decisions.
-
-## License
-
-No license was added for this project.
+1. Clone this repository to your local machine:
+   ```bash
+   git clone [https://github.com/Rhythm-glitch/Githubcommunity.git](https://github.com/Rhythm-glitch/Githubcommunity.git)
+   cd Githubcommunity
